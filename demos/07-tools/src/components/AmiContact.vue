@@ -3,7 +3,14 @@
     <div class="w-full flex items-center justify-between p-6 space-x-6">
       <div class="flex-1 truncate">
         <div class="flex items-center space-x-3 ">
-          <h3 class="text-gray-900 text-4xl  font-medium">{{ ami.name }}</h3>
+          <h3 class="text-gray-900 text-4xl  font-medium">
+            {{ ami.name }}
+            <span
+              v-if="ami.isFavorite"
+              class="rounded-md bg-pink-300 text-white text-sm p-2"
+              >Best Friend</span
+            >
+          </h3>
         </div>
         <button
           type="button"
@@ -11,6 +18,13 @@
           class="p-1 rounded-lg border border-blue-300 text-gray-700 hover:bg-blue-300 text-white"
         >
           Show details
+        </button>
+        <button
+          type="button"
+          @click="setFavorite"
+          class="p-1 mx-1 rounded-lg border border-blue-300 text-gray-700 hover:bg-blue-300 text-white"
+        >
+          Set as favorite
         </button>
       </div>
     </div>
@@ -59,6 +73,9 @@ export default {
   methods: {
     toggleDetails() {
       this.isDetailsVisible = !this.isDetailsVisible;
+    },
+    setFavorite() {
+      this.ami.isFavorite = !this.ami.isFavorite;
     },
   },
 };

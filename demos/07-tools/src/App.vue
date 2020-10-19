@@ -20,18 +20,21 @@ export default {
           name: "Gilles Bertrand",
           phone: "00235202652",
           email: "gilles@triptyk.eu",
+          isFavorite: false,
         },
         {
           id: 2,
           name: "Anissa Belkheir",
           phone: "00235202652",
           email: "anissa@triptyk.eu",
+          isFavorite: true,
         },
         {
           id: 3,
           name: "Geoffrey Denys",
           phone: "00235202652",
           email: "geoffrey@triptyk.eu",
+          isFavorite: false,
         },
       ],
     };
