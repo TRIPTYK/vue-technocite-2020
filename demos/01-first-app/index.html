@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+
+    <title>VueJS</title>
+</head>
+<body> 
+    <div id="app">
+        {{name}}
+        {{courses}}
+        {{person}}
+        <section>
+            <a v-bind:href="tpkLink">About Triptyk</a>
+            <a :href="tpkLink">About Triptyk</a>
+        </section>
+        <div>
+            <label for="goal">Goal</label>
+            
+            <input class="border" type="text" id="goal" />
+            <button class="border" type="button">
+                Add Goal
+            </button>
+        </div>
+        {{outputGoal()}}
+        <p>{{a>4 ? "ok":"not ok"}}</p>
+        <p v-html="sectionContact"></p>
+    </div>
+    
+</body>
+</html>

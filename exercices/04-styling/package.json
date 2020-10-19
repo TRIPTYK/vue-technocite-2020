@@ -1,0 +1,12 @@
+{
+  "name": "04-styling",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "live-server"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

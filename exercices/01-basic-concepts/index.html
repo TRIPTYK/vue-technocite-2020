@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice de base</title>
+    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container mx-auto mt-2 border w-2/3">
+        <div id="root" class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+             <!-- Output your name -->
+                Your Name is {{name}}
+            </h3>
+              <!-- Output your age -->
+            <p>Your Age is {{age}}</p>
+             <!-- Output your age in five years -->
+            <p>Your age in five years will be {{age+5}}</p>
+             <!-- Output a random number with a method -->
+            <p>A random number between 0 and 1  is : {{getRandomNumber()}}</p>
+            <!-- Set the src dynamicly -->
+            <img :src="avatar">
+            <!-- Set the value of this input with your name  -->
+            <input class="border" type="text" v-bind:value="name" />
+          </div>
+    </div>
+</body>
+</html>

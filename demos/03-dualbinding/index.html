@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice de base</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="root" class="container mx-auto m-2 p-3 border w-2/3">
+      <input class="border" type="text" v-model="firstName" />
+      <p>{{firstName}}</p>
+      <input class="border" type="text" v-model="lastName" />
+      <p>{{lastName}}</p>
+      <p>{{fullName}}</p>
+      <!-- <p>{{getFullName()}}</p> -->
+      <div>
+        <p class="flex">
+          <button
+            @click="counter++"
+            type="button"
+            class="border mx-1 px-1 hover:bg-teal-300"
+          >
+            Add</button
+          ><button
+            @click="counter--"
+            type="button"
+            class="border hover:bg-teal-300"
+          >
+            remove
+          </button>
+        </p>
+        <p>{{counter}}</p>
+      </div>
+    </div>
+  </body>
+</html>

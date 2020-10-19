@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice de base</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main id="root">
+      <div class="container mx-auto m-2 p-3 border w-2/3">
+        <h1 v-show="ifTitleVisible">Conditionnal title</h1>
+        <!-- <h1 v-else>Title for else</h1> -->
+        <p>
+          <button
+            type="button"
+            class="border rounded shadow p-1"
+            @click="toggleTitle"
+          >
+            Show/hide
+          </button>
+        </p>
+      </div>
+      <div class="px-2">
+        <h2 class="font-medium">Items List</h2>
+        <ul>
+          <li v-for="(item,index) in items" :key="item.name">
+            {{item.name}} -- {{index}}
+            <button
+              class="px-1 border rounded shadow hover:bg-blue-300 hover:text-white"
+              type="button"
+              @click="deleteItem(index)"
+            >
+              delete
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li v-for="(value, key) in {name:'gilles',age:'46'}">
+            {{value}} - {{key}}
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
