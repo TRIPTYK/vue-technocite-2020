@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.btn{
+    @apply px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 
+  }
+  .input-base{
+      @apply  p-2 border block w-full leading-5
+  }

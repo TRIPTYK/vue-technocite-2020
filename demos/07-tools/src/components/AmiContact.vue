@@ -59,6 +59,16 @@ export default {
       required: true,
     },
   },
+  // emits:["toggle-favorite"],
+  emits:{
+    "toggle-favorite": function(id){
+      if(id){
+        return true
+      }
+      console.warn("Id 's missing")
+      return false
+    }
+  },
   data() {
     return {
       isDetailsVisible: false,
@@ -75,7 +85,8 @@ export default {
       this.isDetailsVisible = !this.isDetailsVisible;
     },
     setFavorite() {
-      this.ami.isFavorite = !this.ami.isFavorite;
+      this.$emit('toggle-favorite',this.ami.id)
+      // this.ami.isFavorite = !this.ami.isFavorite;
     },
   },
 };

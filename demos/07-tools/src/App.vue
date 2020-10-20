@@ -1,7 +1,7 @@
 <template>
   <h1>Friends list</h1>
   <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    <AmiContact v-for="ami in amis" :key="ami.id" :ami="ami"></AmiContact>
+    <AmiContact v-for="ami in amis" :key="ami.id" :ami="ami" @toggle-favorite="toggleFavorite"></AmiContact>
   </ul>
 </template>
 
@@ -11,6 +11,13 @@ export default {
   name: "App",
   components: {
     AmiContact,
+  },
+  methods:{
+    toggleFavorite(id){
+      console.log('favorite toggle',id)
+      this.amis.forEach(ami=>ami.isFavorite=false)
+      this.amis.find(ami=>ami.id ===id).isFavorite = !this.amis.find(ami=>ami.id ===id).isFavorite
+    }
   },
   data() {
     return {
