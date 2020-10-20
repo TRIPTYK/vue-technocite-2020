@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.btn{
+    @apply px-2 border rounded bg-orange-600 text-white;
+}
