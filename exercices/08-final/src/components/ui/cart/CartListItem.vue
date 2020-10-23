@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   props: {
     item: {
@@ -47,13 +48,21 @@ export default {
       required: true,
     },
   },
+  methods:{
+    ...mapActions('cart',['addToCart','removeFromCart'])
+  },
   computed: {
     qt: {
       get() {
         return this.item.qt;
       },
-      set() {
-        console.log("set qt item");
+      set(value) {
+        console.log(value)
+        if(value < this.item.qt)
+        {
+          return this.removeFromCart(this.item)
+        } 
+        this.addToCart(this.item)
       },
     },
   },
