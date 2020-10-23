@@ -17,11 +17,11 @@
                 class="px-3 py-2 rounded-md text-sm leading-5 font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
                 >Store</router-link
               >
-              <router-link
+              <!-- <router-link
                 to="/cart"
                 class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
                 >Cart</router-link
-              >
+              > -->
               <router-link
                 to="/admin"
                 class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
@@ -61,8 +61,8 @@
 
         <div class="hidden lg:block lg:ml-4">
           <div class="flex items-center">
-            <button
-              class="flex-shrink-0 p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
+            <router-link to="/cart"
+              class="relative flex-shrink-0 p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
               aria-label="Notifications"
             >
               <!-- Heroicon name: bell -->
@@ -74,13 +74,15 @@
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                />
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
               </svg>
-            </button>
+              
+             <span v-if="cartArticlesNumber>0" class="absolute top-0 left-0 w-5 h-5 rounded-full font-medium bg-indigo-500 text-white pl-2  text-xs">{{cartArticlesNumber}}</span>
+            </router-link>
 
             <!-- Profile dropdown -->
             <div class="ml-4 relative flex-shrink-0">
@@ -136,7 +138,12 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from 'vuex';
+export default {
+  computed:{
+    ...mapGetters('cart',['cartArticlesNumber'])
+  }
+};
 </script>
 
 <style></style>

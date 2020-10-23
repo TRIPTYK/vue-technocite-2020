@@ -77,14 +77,17 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   props: {
       sku:{
         type:Object,
         required:true
       }
+    },
+    methods:{
+      ...mapActions("cart",["addToCart"])
     }
-  
 }
 </script>
 
